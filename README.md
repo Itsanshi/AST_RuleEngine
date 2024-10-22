@@ -230,5 +230,6 @@ if __name__ == "__main__":
 - Integrate role-based access control (RBAC) for managing rule permissions.
 
 
-Summary
+## Summary
+
 This updated README provides clear instructions on setting up, running, and testing the rule engine application. The test.py script automates the testing process, ensuring that the rule engine's functionality is verified correctly. By following these instructions, you can ensure that your rule engine application is working as expected.
