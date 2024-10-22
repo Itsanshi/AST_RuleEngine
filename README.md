@@ -173,14 +173,14 @@ curl -X POST http://127.0.0.1:5000/modify_rule -H "Content-Type: application/jso
 ## Testing
 
 You can use the provided test.py script to test the rule engine functionality. Run it using:
-```bash
-python test.py
+```python 
+test.py
 ```
 This script will test creating rules, combining rules, evaluating rules, and modifying rules:
 test.py Script
 Here is the test.py script for automated testing:
-```bash
-python
+
+```python
 import requests
 import json
 ```
