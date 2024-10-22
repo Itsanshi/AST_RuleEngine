@@ -136,19 +136,19 @@ Success Response:
 
 Here's a step-by-step workflow using curl commands to test the rule engine:
 Create the first rule:
-bash
+```bash
 curl -X POST http://127.0.0.1:5000/create_rule -H "Content-Type: application/json" -d '{"rule_string": "(age > 30 AND department = '\''Sales'\'') OR (salary > 50000)"}'
-
+```
 Create the second rule:
-bash
+```bash
 curl -X POST http://127.0.0.1:5000/create_rule -H "Content-Type: application/json" -d '{"rule_string": "experience > 5 AND department = '\''Marketing'\''"}'
-
+```
 Combine the rules (replace 1 and 2 with the actual rule IDs from steps 1 and 2):
-bash
+```bash
 curl -X POST http://127.0.0.1:5000/combine_rules -H "Content-Type: application/json" -d '{"rule_ids": [1, 2]}'
-
+```
 Evaluate the combined rule (replace 3 with the actual combined rule ID from step 3):
-bash
+```bash
 curl -X POST http://127.0.0.1:5000/evaluate_rule -H "Content-Type: application/json" -d '{
   "rule_id": 3,
   "data": {
@@ -158,31 +158,34 @@ curl -X POST http://127.0.0.1:5000/evaluate_rule -H "Content-Type: application/j
     "experience": 6
   }
 }'
+```
 
 Modify a rule (replace 1 with the actual rule ID you want to modify):
-bash
+```bash
 curl -X POST http://127.0.0.1:5000/modify_rule -H "Content-Type: application/json" -d '{
   "rule_id": 1,
   "new_rule_string": "age > 40 AND department = '\''HR'\''"
 }'
+```
 
 
 
 ## Testing
 
 You can use the provided test.py script to test the rule engine functionality. Run it using:
-bash
+```bash
 python test.py
-
-This script will test creating rules, combining rules, evaluating rules, and modifying rules.
+```
+This script will test creating rules, combining rules, evaluating rules, and modifying rules:
 test.py Script
 Here is the test.py script for automated testing:
+```bash
 python
 import requests
 import json
-
-BASE_URL = "http://127.0.0.1:5000"
-
+```
+### BASE_URL = "http://127.0.0.1:5000"
+```python
 def test_create_rule(rule_string):
     print("Testing create_rule...")
     url = f"{BASE_URL}/create_rule"
@@ -214,6 +217,8 @@ def test_modify_rule(rule_id, new_rule_string):
     print(f"Response: {response.json()}")
 
 if __name__ == "__main__":
+
+  ```
     # Create Rule 1
     rule_string_1 = "(age > 30 AND department = 'Sales')"
     rule_id_1 = test_create_rule(rule_string_1)
