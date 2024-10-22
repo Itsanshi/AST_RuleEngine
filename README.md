@@ -59,17 +59,19 @@ The Rule Engine allows users to create and evaluate complex eligibility rules ba
 - Method: POST
 - Data Params:
  
- ```json
- {
+```json
+{
   "rule_string": "(age > 30 AND department = 'Sales') OR (salary > 50000)"
- }
+}
+```
 
- Success Response:
+Success Response:
 ```json
 {
   "id": 1,
   "ast": "..."
 }
+```
 
 2. Combine Rules
 - URL: /combine_rules
@@ -79,19 +81,20 @@ The Rule Engine allows users to create and evaluate complex eligibility rules ba
 {
   "rule_ids": [1, 2]
 }
-
+```
 Success Response:
-json
+```json
 {
   "id": 3,
   "combined_ast": "..."
 }
+```
 
 3. Evaluate Rule
 - URL: /evaluate_rule
 - Method: POST
 - Data Params:
-json
+```json
 {
   "rule_id": 3,
   "data": {
@@ -101,28 +104,31 @@ json
     "experience": 6
   }
 }
-
+```
 Success Response:
 ```json
 {
   "result": true
 }
+```
 
 4. Modify Rule
 - URL: /modify_rule
 - Method: POST
 - Data Params:
-json
+```json
 {
   "rule_id": 1,
   "new_rule_string": "age > 40 AND department = 'HR'"
 }
+```
 
 Success Response:
-json
+```json
 {
   "message": "Rule updated successfully"
 }
+```
 
 
 
