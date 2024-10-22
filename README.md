@@ -28,11 +28,11 @@ The Rule Engine allows users to create and evaluate complex eligibility rules ba
    pip install -r requirements.txt
 
 3. Run the Flask application:
-  ```bash
+   ```bash
    python main.py
 
 4. Run the UI(Frontend):
-  ```bash
+   ```bash
    python rlg.py
 
 
