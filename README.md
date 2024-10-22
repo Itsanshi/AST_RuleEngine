@@ -23,9 +23,17 @@ The Rule Engine allows users to create and evaluate complex eligibility rules ba
    ```bash
    pip install flask sqlalchemy
 
-Run the Flask application:
-bash
-python main.py
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+3. Run the Flask application:
+  ```bash
+   python main.py
+
+4. Run the UI(Frontend):
+  ```bash
+   python rlg.py
 
 
 ## Components
@@ -39,8 +47,9 @@ python main.py
 ## App Components
 
 1. CREATE RULE : will create a rule and show id in UI. for eg: you create two rules it will create two rules with id 1 and 2
-2. Combine RULE: for eg : you add rule number id with comma separated format, it will create a mega rule with separate id on the tkinteR UI
+2. COMBINE RULE: for eg : you add rule number id with comma separated format, it will create a mega rule with separate id on the tkinteR UI
 3. EVALUATE RULE : Add the mega rule Id and data params that you need to provide in json format
+
 
 
 ## API Endpoints 
