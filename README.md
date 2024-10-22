@@ -55,26 +55,27 @@ The Rule Engine allows users to create and evaluate complex eligibility rules ba
 ## API Endpoints 
 
 1. Create Rule
-URL: /create_rule
-Method: POST
-Data Params:
-json
-{
+- URL: /create_rule
+- Method: POST
+- Data Params:
+ 
+ ```json
+ {
   "rule_string": "(age > 30 AND department = 'Sales') OR (salary > 50000)"
-}
+ }
 
-Success Response:
-json
+ Success Response:
+```json
 {
   "id": 1,
   "ast": "..."
 }
 
 2. Combine Rules
-URL: /combine_rules
-Method: POST
-Data Params:
-json
+- URL: /combine_rules
+- Method: POST
+- Data Params:
+```json
 {
   "rule_ids": [1, 2]
 }
@@ -87,9 +88,9 @@ json
 }
 
 3. Evaluate Rule
-URL: /evaluate_rule
-Method: POST
-Data Params:
+- URL: /evaluate_rule
+- Method: POST
+- Data Params:
 json
 {
   "rule_id": 3,
@@ -102,15 +103,15 @@ json
 }
 
 Success Response:
-json
+```json
 {
   "result": true
 }
 
 4. Modify Rule
-URL: /modify_rule
-Method: POST
-Data Params:
+- URL: /modify_rule
+- Method: POST
+- Data Params:
 json
 {
   "rule_id": 1,
